@@ -50,10 +50,19 @@ public class MhsAdapter extends RecyclerView.Adapter<MhsAdapter.MhsVH> {
         notifyDataSetChanged();
     }
 
+    private final int limit = 5;
     @Override
     public int getItemCount() {
-        return mhsList.size();
+        if(mhsList.size() > limit){
+            return limit;
+        }
+        else
+        {
+            return mhsList.size();
+        }
+
     }
+
 
     public class MhsVH extends RecyclerView.ViewHolder {
 
@@ -80,5 +89,6 @@ public class MhsAdapter extends RecyclerView.Adapter<MhsAdapter.MhsVH> {
                 }
             });
         }
+
     }
 }
